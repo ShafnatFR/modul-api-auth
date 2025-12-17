@@ -57,7 +57,7 @@ class AuthController extends Controller
         }
 
         if (Auth::attempt($credentials)) {
-            
+            /** @var \App\Models\User $user */
             $user = Auth::user();
             $token = $user->createToken('api_token')->plainTextToken;
 
